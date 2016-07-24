@@ -14,13 +14,19 @@ function mic_gallery_filter( $atts ){
         wp_enqueue_style('mic-gallery-foundation-css', plugin_dir_url(__DIR__). '/vendor/foundation/foundation.min.css', false, '1.0' );
         wp_enqueue_script('mic-gallery-foundation-js', plugin_dir_url(__DIR__). '/vendor/foundation/foundation.min.js', array('jquery'), false, '1.0' );
       }
- 
+ if ( wp_script_is( 'mic-gallery-js', 'enqueued' ) ) {add_action( 'wp_footer', 'print_inline_script',9999 ); }
+
+ if (isset( $atts['show_titles'] ) && $atts['show_titles'] == 'yes') {
+ 	add_action( 'wp_head', 'print_inline_style',9999 );
+ }
+
+
 	function print_inline_script() {
-		  if ( wp_script_is( 'mic-gallery-js', 'enqueued' ) ) {
+		  
 		?>
 		<script type="text/javascript">
-				$(document).ready(function() {
-						$('.popup-gallery').magnificPopup({
+		jQuery(document).ready(function($) {
+			$('.popup-gallery').magnificPopup({
 							delegate: 'a',
 							type: 'image',
 							tLoading: 'Loading image #%curr%...',
@@ -37,13 +43,39 @@ function mic_gallery_filter( $atts ){
 								}
 							}
 						});
-					});
+		});
+				
 		</script>
 		<?php
-		  }
+		  
 		}
-		add_action( 'wp_footer', 'print_inline_script',9999 ); 
+		
+		function print_inline_style() {
+			?>
+	
+		<style>
+			.mic-gallery-slide a {
+					position: relative;
+			    display: block;
+			    overflow: hidden;
+			    text-align: center;
+			    width: 100%;
+				}
+			.mic-slide-title {
+				position: absolute;
+		    display: block;
+		    width: 100%;
+		    color: white;
+		    background: rgba(0, 0, 0, 0.55);
+		    bottom: 10%;
+		    left: 0;
+		    padding: 10px 0;
+		    border: solid 1px #fff;
+			}
+		</style>
 
+			<?php
+		}
 
     return $atts;
  
