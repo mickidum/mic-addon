@@ -16,6 +16,7 @@ function mic_gallery_shortcode($atts, $content = null)
     'images_border_size' => '',
     'border_color' => '',
     'show_titles' => '',
+    'count_columns' => '',
   ) , $atts));
   $output = '';
   extract($atts);
@@ -47,7 +48,16 @@ function mic_gallery_shortcode($atts, $content = null)
     }
 
 ?>
-		<?php echo '<div class="popup-gallery"><div class="row small-up-1 medium-up-2 large-up-4">'; 
+    <?php 
+      if(!empty($count_columns)) {
+        $count_col = 'large-up-'.$count_columns;
+      }
+      else {
+        $count_col = "large-up-4";
+      }
+     ?>
+
+		<?php echo '<div class="popup-gallery"><div class="row small-up-1 medium-up-2 '.$count_col.'">'; 
       if(!empty($images_border_size)) {
         $image_css = 'style="border:solid '.$images_border_size.' '.$border_color.'";';
       }
@@ -55,18 +65,21 @@ function mic_gallery_shortcode($atts, $content = null)
         $image_css = '';
       }
     ?>
-      
+      <?php 
+      $end_class = 'end'; 
+      $index_img = count($images) - 1;
+      ?>
   		<?php foreach($attachment_data as $i => $image): ?>
-        
+       
        <?php   $image_alt = get_post_meta( $images[$i], '_wp_attachment_image_alt', true);
         $image_ttl = get_the_title(esc_attr($images[$i]));
          
-     	 echo '<div class="column mic-gallery-slide"><a href="'.esc_attr( esc_attr( $attachment_data_full[$i][0] ) ).'" title="'.$image_ttl.'"><img class="thumbnail" src="'.esc_attr($image[0]).'" alt="'.(!empty($image_alt) ? $image_alt : $image_ttl).'" '.$image_css.'>'; 
+     	 echo '<div class="column mic-gallery-slide '.(($i == $index_img) ? "$end_class" : "").'"><a href="'.esc_attr( esc_attr( $attachment_data_full[$i][0] ) ).'" title="'.$image_ttl.'"><img class="thumbnail" src="'.esc_attr($image[0]).'" alt="'.(!empty($image_alt) ? $image_alt : $image_ttl).'" '.$image_css.'>'; 
 
 
       
       if (!empty($show_titles)) {
-        echo '<span class="mic-slide-title">'.$image_ttl.'</span>'; 
+        echo '<h5 class="mic-slide-title"><span>'.$image_ttl.'</span></h5>'; 
       }
       echo "</a></div>";
       ?>

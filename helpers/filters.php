@@ -61,16 +61,22 @@ function mic_gallery_filter( $atts ){
 			    text-align: center;
 			    width: 100%;
 				}
+			.mic-slide-title span {
+				position: relative;
+				display: block;
+				width: 90%;
+				margin: 0 auto;
+				color: white;
+		    background: rgba(0, 0, 0, 0.55);
+		    border: solid 1px #fff;
+		    padding: 5px 0;
+			}
 			.mic-slide-title {
 				position: absolute;
 		    display: block;
 		    width: 100%;
-		    color: white;
-		    background: rgba(0, 0, 0, 0.55);
-		    bottom: 10%;
+		    bottom: 5%;
 		    left: 0;
-		    padding: 10px 0;
-		    border: solid 1px #fff;
 			}
 		</style>
 

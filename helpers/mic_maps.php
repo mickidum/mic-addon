@@ -57,6 +57,19 @@ function mic_map_params()
             'description' => __('Show Titles For Items', 'kingcomposer') ,
             'admin_label' => true,
           ) ,
+          array(
+            'name' => 'count_columns',
+            'label' => 'How Many Columns',
+            'type' => 'number_slider',
+            'options' => array(
+              'min' => 1,
+              'max' => 6,
+              // 'unit' => 'px',
+              'show_input' => true,
+            ) ,
+            'value' => '4',
+            'description' => 'Chose How Many Columns'
+          ) ,
         ) ,
         'Style' => array(
           array(
