@@ -16,7 +16,9 @@ function mic_gallery_shortcode($atts, $content = null)
     'images_border_size' => '',
     'border_color' => '',
     'show_titles' => '',
-    'count_columns' => '',
+    'count_columns_large' => '',
+    'count_columns_medium' => '',
+    'count_columns_small' => '',
   ) , $atts));
   $output = '';
   extract($atts);
@@ -49,15 +51,27 @@ function mic_gallery_shortcode($atts, $content = null)
 
 ?>
     <?php 
-      if(!empty($count_columns)) {
-        $count_col = 'large-up-'.$count_columns;
+      if(!empty($count_columns_large)) {
+        $count_col_l = 'large-up-'.$count_columns_large;
       }
       else {
-        $count_col = "large-up-4";
+        $count_col_l = "large-up-4";
+      }
+      if(!empty($count_columns_medium)) {
+        $count_col_m = 'medium-up-'.$count_columns_medium;
+      }
+      else {
+        $count_col_m = "medium-up-3";
+      }
+      if(!empty($count_columns_small)) {
+        $count_col_s = 'small-up-'.$count_columns_small;
+      }
+      else {
+        $count_col_s = "small-up-1";
       }
      ?>
 
-		<?php echo '<div class="popup-gallery"><div class="row small-up-1 medium-up-2 '.$count_col.'">'; 
+		<?php echo '<div class="popup-gallery"><div class="row '.$count_col_s.' '.$count_col_m.' '.$count_col_l.'">'; 
       if(!empty($images_border_size)) {
         $image_css = 'style="border:solid '.$images_border_size.' '.$border_color.'";';
       }

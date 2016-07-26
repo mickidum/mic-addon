@@ -58,8 +58,8 @@ function mic_map_params()
             'admin_label' => true,
           ) ,
           array(
-            'name' => 'count_columns',
-            'label' => 'How Many Columns',
+            'name' => 'count_columns_large',
+            'label' => 'How Many Columns Large',
             'type' => 'number_slider',
             'options' => array(
               'min' => 1,
@@ -68,7 +68,33 @@ function mic_map_params()
               'show_input' => true,
             ) ,
             'value' => '4',
-            'description' => 'Chose How Many Columns'
+            'description' => 'Chose How Many Columns large'
+          ) ,
+          array(
+            'name' => 'count_columns_medium',
+            'label' => 'How Many Columns Medium',
+            'type' => 'number_slider',
+            'options' => array(
+              'min' => 1,
+              'max' => 6,
+              // 'unit' => 'px',
+              'show_input' => true,
+            ) ,
+            'value' => '3',
+            'description' => 'Chose How Many Columns medium'
+          ) ,
+          array(
+            'name' => 'count_columns_small',
+            'label' => 'How Many Columns Small',
+            'type' => 'number_slider',
+            'options' => array(
+              'min' => 1,
+              'max' => 6,
+              // 'unit' => 'px',
+              'show_input' => true,
+            ) ,
+            'value' => '2',
+            'description' => 'Chose How Many Columns small'
           ) ,
         ) ,
         'Style' => array(

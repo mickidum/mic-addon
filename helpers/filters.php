@@ -68,14 +68,14 @@ function mic_gallery_filter( $atts ){
 				margin: 0 auto;
 				color: white;
 		    background: rgba(0, 0, 0, 0.55);
-		    border: solid 1px #fff;
+		    border: solid 1px rgba(158, 158, 158, 0.6);
 		    padding: 5px 0;
 			}
 			.mic-slide-title {
 				position: absolute;
 		    display: block;
 		    width: 100%;
-		    bottom: 5%;
+		    bottom: 10%;
 		    left: 0;
 			}
 		</style>
