@@ -35,7 +35,7 @@ function mic_map_params()
           'label'     => __( 'Image size', 'kingcomposer' ),
           'name'      => 'image_size',
           'description' => __( 'Set the image size : thumbnail, medium, large or full.', 'kingcomposer' ),
-          'value'     => 'full'
+          'value'     => 'mini-gal'
         ),
           array(
             'type' => 'checkbox',

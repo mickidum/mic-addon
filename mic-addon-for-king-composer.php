@@ -22,7 +22,7 @@ if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
     require_once ( 'shortcodes/magnific-gallery/magnific-gallery-shortcode.php' );
     // require_once ( 'shortcodes/before_after/before-after-shortcode.php' );
     // require_once ( 'shortcodes/accordion/accordion-shortcode.php' );
-    
+    add_image_size( 'mini-gal', 400, 400, true );
 } 
 
 
