@@ -39,7 +39,7 @@ function mic_gallery_filter( $atts ){
 							image: {
 								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
 								titleSrc: function(item) {
-									return item.el.attr('title') + '';
+									return	'<h4>' + item.el.attr('data-title') + '</h4>' + '<p>' + item.el.attr('data-description') + '</p>';
 								}
 							}
 						});
