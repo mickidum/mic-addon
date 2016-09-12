@@ -89,7 +89,7 @@ function mic_gallery_shortcode($atts, $content = null)
         $image_ttl = get_the_title(esc_attr($images[$i]));
         $image_desc = get_post(esc_attr($images[$i]));;
          
-     	 echo '<div class="column mic-gallery-slide '.(($i == $index_img) ? "$end_class" : "").'"><a href="'.esc_attr( esc_attr( $attachment_data_full[$i][0] ) ).'" data-description="'.(!empty($image_desc->post_content) ? $image_desc->post_content : (!empty($image_alt) ? $image_alt : $image_ttl)).'" data-title="'.$image_ttl.'"><img class="thumbnail" src="'.esc_attr($image[0]).'" alt="'.(!empty($image_alt) ? $image_alt : $image_ttl).'" '.$image_css.'>'; 
+     	 echo '<div class="column mic-gallery-slide '.(($i == $index_img) ? "$end_class" : "").'"><a href="'.esc_attr( esc_attr( $attachment_data_full[$i][0] ) ).'" data-description="'.(!empty($image_desc->post_content) ? $image_desc->post_content : (!empty($image_alt) ? $image_alt : $image_ttl)).'" data-title="'.$image_ttl.'"><img class="thumbnaila" src="'.esc_attr($image[0]).'" alt="'.(!empty($image_alt) ? $image_alt : $image_ttl).'" '.$image_css.'>'; 
 
 
       
@@ -113,3 +113,4 @@ function mic_gallery_shortcode($atts, $content = null)
 
 add_shortcode('mic_gallery', 'mic_gallery_shortcode');
 
+?>
