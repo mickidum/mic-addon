@@ -24,7 +24,7 @@ Mic Extensions bundle For King Composer plugin is a mega powerful shortcodes/add
 
 == Installation ==
 
-Installing this plugin as regular wordpress plugin. First you need to install King Composer plugin then install RD Extensions bundle For King Composer.
+Installing this plugin as regular wordpress plugin. First you need to install King Composer plugin then install Mic Addon Extensions bundle For King Composer.
 
 This addon plugin works like other page builder addon plugin. Go to new page then click on King Composer builder then click on Add Element you should see King Composer Extensions All In One menu  as Name "Mic extensions" on Manu Top, click on it you will see All King Composer Extensions will Open . Open it and browse an image and customize according to your needs.
 
